@@ -7,10 +7,11 @@
 import os
 
 path = "home"
-list_dir = os.listdir(path)
 
 
-def scan_folder(list_dir):
+
+def scan_folder(path):
+    list_dir = os.listdir(path)
     name1 = []
     name2 = []
     for filename in list_dir:
@@ -21,8 +22,7 @@ def scan_folder(list_dir):
         find_dir = os.path.join(path, dirnames)
         if os.path.isdir(find_dir):
             name2.append(find_dir)
-    arr = {"filenames": name1, "dirnames": name2}
-    return arr
+    return {"filenames": name1, "dirnames": name2}
 
 
 folders = scan_folder(path)
