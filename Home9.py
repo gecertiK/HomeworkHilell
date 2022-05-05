@@ -10,7 +10,7 @@ path = "home"
 list_dir = os.listdir(path)
 
 
-def scan_folder(path):
+def scan_folder(list_dir):
     name1 = []
     name2 = []
     for filename in list_dir:
@@ -21,7 +21,7 @@ def scan_folder(path):
         find_dir = os.path.join(path, dirnames)
         if os.path.isdir(find_dir):
             name2.append(find_dir)
-            arr = {"filenames": name1, "dirnames": name2}
+    arr = {"filenames": name1, "dirnames": name2}
     return arr
 
 
@@ -43,7 +43,7 @@ def sort_dict(folders, sort_ABC=True):
 
 
 sort_folders = sort_dict(folders, False)
-print(sort_folders)
+# print(sort_folders)
 
 # 3. Написать функцию, которая получает два параметра - словарь, описанный в пункте 1 и строку, которая может быть
 # или именем файла, или именем папки. (В имени файла должна быть точка).
@@ -57,4 +57,4 @@ def add_file_dir(folders, name_str):
         folders["dirnames"].append(name_str)
     return folders
 sor_file_dir = add_file_dir(folders, name_str)
-print(sor_file_dir)
+# print(sor_file_dir)
