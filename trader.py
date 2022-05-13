@@ -8,6 +8,7 @@ args.add_argument("INPUT2", nargs='?', default=0)
 args = vars(args.parse_args())
 amount = args["INPUT2"]
 
+
 class BigTrader:
     def __init__(self, filename_config, filename_wallet):
         self.filename_config = filename_config
