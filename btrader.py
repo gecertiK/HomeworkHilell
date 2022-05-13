@@ -18,7 +18,7 @@ class BigTrader:
         self.usd_amount = self.wallet_info['usd']
         self.usd_course = self.wallet_info['course']
 
-    def read_json_file(self) -> dict:
+    def read_json_file(self):
         if self.filename_wallet:
             with open(self.filename_wallet, 'r') as file:
                 start_dict = json.load(file)
