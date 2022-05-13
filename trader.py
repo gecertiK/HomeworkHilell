@@ -100,9 +100,9 @@ class BigTrader:
             json.dump(star_dict, file, indent=2)
 
 
-def write_json_file(data):
+def write_json_file(filename):
     with open("wallet.json", 'w') as file:
-        json.dump(data, file, indent=2)
+        json.dump(filename, file, indent=2)
 
 
 class_BigTrader = BigTrader("config.json", "wallet.json")
