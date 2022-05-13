@@ -8,7 +8,6 @@ args.add_argument("MULT", nargs='?', default=0)
 args = vars(args.parse_args())
 amount = args["MULT"]
 
-
 class BigTrader:
     def __init__(self, filename_config, filename_wallet):
         self.filename_config = filename_config
