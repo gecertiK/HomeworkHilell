@@ -4,9 +4,9 @@ from argparse import ArgumentParser
 
 args = ArgumentParser()
 args.add_argument("INPUT")
-args.add_argument("MULT", nargs='?', default=0)
+args.add_argument("INPUT2", nargs='?', default=0)
 args = vars(args.parse_args())
-amount = args["MULT"]
+amount = args["INPUT2"]
 
 class BigTrader:
     def __init__(self, filename_config, filename_wallet):
@@ -111,13 +111,13 @@ elif args["INPUT"] == "RATE":
     class_BigTrader.rate()
 elif args["INPUT"] == "AVAILABLE":
     class_BigTrader.available()
-elif args["INPUT"] == "BUY" and args["MULT"] != "ALL":
+elif args["INPUT"] == "BUY" and args["INPUT2"] != "ALL":
     write_json_file(class_BigTrader.buy(float(amount)))
-elif args["INPUT"] == "SELL" and args["MULT"] != "ALL":
+elif args["INPUT"] == "SELL" and args["INPUT2"] != "ALL":
     write_json_file(class_BigTrader.sell(float(amount)))
-elif args["INPUT"] == "BUY" and args["MULT"] == "ALL":
+elif args["INPUT"] == "BUY" and args["INPUT2"] == "ALL":
     write_json_file(class_BigTrader.buy_all())
-elif args["INPUT"] == "SELL" and args["MULT"] == "ALL":
+elif args["INPUT"] == "SELL" and args["INPUT2"] == "ALL":
     write_json_file(class_BigTrader.sell_all())
 elif args["INPUT"] == "NEXT":
     write_json_file(class_BigTrader.next())
